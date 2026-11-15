@@ -56,7 +56,7 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;  // was 150: more letters print instantly while typing
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
@@ -69,14 +69,15 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
 
-        // Shift variants: same as above but WITHOUT require-prior-idle, so a
-        // capital right after a space (". The") still works mid-sentence.
+        // Shift variants: a much shorter require-prior-idle (100 ms) so F/J
+        // print instantly mid-word, while a capital right after a space
+        // (". The") still works. Capital fails → lower to 70 or remove it.
         hmls: home_row_shift_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -84,6 +85,7 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
+            require-prior-idle-ms = <100>;  // short: F/J instant mid-word, capitals after a space still work
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
@@ -96,21 +98,26 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
+            require-prior-idle-ms = <100>;  // short: F/J instant mid-word, capitals after a space still work
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
 
-        // Thumb layer-tap. Balanced instead of ZMK's default tap-preferred, so
-        // the layer is instant when you press+release a key inside it (no 200 ms
-        // wait). quick-tap: tap-then-hold Space/Tab auto-repeats.
+        // Thumb layer-tap (Tab/NUM, Enter/NAV, Space/SYM, Del/FUN).
+        //  balanced              → layer is instant once you press+release a key inside it
+        //  require-prior-idle-ms → while typing words, Space/Enter print on PRESS (no lag);
+        //                          from a letter straight into SYM/NAV, hold a beat (>120 ms)
+        //  quick-tap-ms = 0      → "tap Space, then hold Space" opens SYM (e.g. `if (`)
+        //                          instead of auto-repeating spaces
         lth: thumb_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             display-name = "Thumb Layer-Tap";
             flavor = "balanced";
             tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <120>;
             bindings = <&mo>, <&kp>;
         };
     };
