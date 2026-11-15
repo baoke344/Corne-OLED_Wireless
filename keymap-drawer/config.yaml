@@ -1,0 +1,124 @@
+parse_config:
+  trans_legend: {t: "▽", type: trans}
+  zmk_keycode_map:
+    LCTRL: "⌃"
+    RCTRL: "⌃"
+    LALT: "⌥"
+    RALT: "⌥"
+    LGUI: "⌘"
+    RGUI: "⌘"
+    LSHFT: "⇧"
+    RSHFT: "⇧"
+    ESC: Esc
+    TAB: Tab
+    RET: Enter
+    SPACE: Space
+    BSPC: "⌫"
+    DEL: Del
+    LEFT: "←"
+    RIGHT: "→"
+    UP: "↑"
+    DOWN: "↓"
+    PG_UP: PgUp
+    PG_DN: PgDn
+    HOME: Home
+    END: End
+    SEMI: ";"
+    SQT: "'"
+    DQT: '"'
+    GRAVE: "`"
+    TILDE: "~"
+    LT: "<"
+    GT: ">"
+    MINUS: "-"
+    PIPE: "|"
+    CARET: "^"
+    LBRC: "{"
+    RBRC: "}"
+    LBKT: "["
+    RBKT: "]"
+    DLLR: "$"
+    BSLH: "\\"
+    EXCL: "!"
+    STAR: "*"
+    FSLH: "/"
+    EQUAL: "="
+    AMPS: "&"
+    HASH: "#"
+    LPAR: "("
+    RPAR: ")"
+    PRCNT: "%"
+    PLUS: "+"
+    AT: "@"
+    COLON: ":"
+    COMMA: ","
+    DOT: "."
+    UNDER: "_"
+    N0: "0"
+    N1: "1"
+    N2: "2"
+    N3: "3"
+    N4: "4"
+    N5: "5"
+    N6: "6"
+    N7: "7"
+    N8: "8"
+    N9: "9"
+  raw_binding_map:
+    # Mac NAV
+    "&kp LC(UP)": {t: "⌃↑", s: Mission}
+    "&kp LC(SPACE)": {t: "⌃Space", s: Input}
+    "&kp LS(LG(LBKT))": {t: "⇧⌘[", s: Prev tab}
+    "&kp LS(LG(RBKT))": {t: "⇧⌘]", s: Next tab}
+    "&kp LG(SPACE)": {t: "⌘Space", s: Spotlight}
+    "&kp LA(LEFT)": {t: "⌥←", s: Word}
+    "&kp LA(RIGHT)": {t: "⌥→", s: Word}
+    "&kp LA(BSPC)": {t: "⌥⌫", s: Del word}
+    "&kp LG(GRAVE)": {t: "⌘`", s: Windows}
+    "&kp LG(Z)": {t: "⌘Z", s: Undo}
+    "&kp LG(X)": {t: "⌘X", s: Cut}
+    "&kp LG(C)": {t: "⌘C", s: Copy}
+    "&kp LG(V)": {t: "⌘V", s: Paste}
+    "&kp LS(LG(Z))": {t: "⇧⌘Z", s: Redo}
+    "&kp LG(LEFT)": {t: "⌘←", s: Line start}
+    "&kp LG(RIGHT)": {t: "⌘→", s: Line end}
+    "&kp LG(UP)": {t: "⌘↑", s: Top}
+    "&kp LG(DOWN)": {t: "⌘↓", s: Bottom}
+    "&kp LG(BSPC)": {t: "⌘⌫", s: Del line}
+    "&kp LS(TAB)": "⇧Tab"
+    "&caps_word": {t: Caps, s: Word}
+    # Windows NAV
+    "&kp LG(TAB)": {t: "⊞Tab", s: Task view}
+    "&kp LC(LS(TAB))": {t: "^⇧Tab", s: Prev tab}
+    "&kp LC(TAB)": {t: "^Tab", s: Next tab}
+    "&kp LG(S)": {t: "⊞S", s: Search}
+    "&kp LC(LEFT)": {t: "^←", s: Word}
+    "&kp LC(RIGHT)": {t: "^→", s: Word}
+    "&kp LC(BSPC)": {t: "^⌫", s: Del word}
+    "&kp LA(TAB)": {t: "Alt Tab", s: Last window}
+    "&kp LC(Z)": {t: "^Z", s: Undo}
+    "&kp LC(X)": {t: "^X", s: Cut}
+    "&kp LC(C)": {t: "^C", s: Copy}
+    "&kp LC(V)": {t: "^V", s: Paste}
+    "&kp LC(Y)": {t: "^Y", s: Redo}
+    "&kp LC(HOME)": {t: "^Home", s: Top}
+    "&kp LC(END)": {t: "^End", s: Bottom}
+    "&kp HOME": {t: Home, s: Line start}
+    "&kp END": {t: End, s: Line end}
+    "&win_dl": {t: "Del line"}
+    # FUN
+    "&kp LC(LS(LG(N4)))": {t: "⌃⇧⌘4", s: Shot→clip}
+    "&kp LS(LG(N4))": {t: "⇧⌘4", s: Shot→file}
+    "&kp LS(LG(N5))": {t: "⇧⌘5", s: Shot tool}
+    "&kp LG(LS(S))": {t: "⊞⇧S", s: Win snip}
+    "&bt BT_SEL 0": BT 0
+    "&bt BT_SEL 1": BT 1
+    "&bt BT_SEL 2": BT 2
+    "&bt BT_CLR": BT clr
+    "&tog WIN": {t: Win/Mac, s: toggle}
+    "&out OUT_TOG": {t: USB/BT}
+draw_config:
+  key_w: 64
+  key_h: 56
+  combo_w: 34
+  combo_h: 26
